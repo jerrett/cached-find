@@ -1,0 +1,19 @@
+This provides a super simple wrapper around Rails.cache.fetch to make it super
+easy to grab objects from the database using caching. It also handles the glory that is
+unmarshalling objects from memory into classes lazy/auto loaded from Rails. (Extra fun in development!)
+
+If you need to manually use Rails.cache.something and need the key, 
+call +cached_find_key_for( *args )+ using the same *args you would use on the cached_find.
+ 
+This works in Rails 2.3 and newer. (probably 2.1+, but 2.3+ for sure.)
+
+This should work with any cache backend, but I've only used it with Memcache. Results may vary, and
+patches are appreciated if any problems are found :)
+
+=== Usage
+
+Basically this works the same as ActiveRecord#find and friends, 
+except you add cached_ in front of it.
+
+  User.cached_find( 1 ) 
+  User.cached_find_all_by_foo( 'bar', :include => :baz, :limit => 2 )
