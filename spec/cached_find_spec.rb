@@ -49,7 +49,7 @@ describe SimpleCachingTest do
   describe 'when cached find key is being created' do 
     it 'should a proper cached find key' do  
       key = SimpleCachingTest.cached_find_key_for( :find_by_foo, 'bar', :conditions => 'something = 12', :include => [:foo] )
-      key.should == 'CF:simple_caching_test:c627eaeda6347d547763d8d69a6b06c371bda2ba'
+      key.should == 'CF:simple_caching_test:98f2876967a47e278f9544d86982f067d62c5be6'
     end 
   end
 
