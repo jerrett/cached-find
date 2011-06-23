@@ -1,8 +1,9 @@
 require 'rubygems'
-require 'active_support'
-require 'active_record'
-require File.dirname(__FILE__) + '/../lib/cached-find'
+require 'bundler/setup'
+require 'active_support/core_ext'
 require 'ruby-debug'
+
+require File.dirname(__FILE__) + '/../lib/cached-find'
 
 # Yay!
 module Rails
